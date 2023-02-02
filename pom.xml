@@ -5,12 +5,12 @@
 
 	<groupId>com.herbmarshall</groupId>
 	<artifactId>PomParent</artifactId>
-	<version>1.3</version>
+	<version>1.4-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
 	<scm>
 		<developerConnection>scm:git:ssh://git.herb.herbmarshall.com/repository/util/${project.artifactId}</developerConnection>
-		<tag>PomParent-1.3</tag>
+		<tag>HEAD</tag>
 	</scm>
 
 	<properties>
