@@ -6,6 +6,7 @@ pipeline {
 			when { beforeAgent true; not { branch pattern: 'master(-\\d+)?', comparator: 'REGEXP' } }
 			agent { docker { image env.DOCKER_IMAGE; args env.DOCKER_ARGS; registryUrl env.DOCKER_URL; registryCredentialsId env.DOCKER_CREDS } }
 			steps {
+				milestone 1
 				sh 'mvn clean deploy'
 			}
 		}
@@ -28,15 +29,27 @@ pipeline {
 		stage( 'Confirm merge' ) {
 			when { beforeAgent true; not { branch pattern: 'master(-\\d+)?', comparator: 'REGEXP' }; expression { releaseCandidate } }
 			steps {
-				milestone 1
-				input 'Merge to Master?'
+				script {
+					try {
+						timeout( time: 15, unit: 'MINUTES' ) {
+							input 'Merge to Master?'
+						}
+						milestone 2
+					}
+					catch ( Exception e ) {
+						releaseCandidate = false
+						currentBuild.result = 'SUCCESS'
+						println "Cancelled build: ${currentBuild.result}"
+						println "Cancelled build: ${currentBuild.currentResult}"
+					}
+				}
 			}
 		}
 		stage( 'Deploy Release' ) {
 			when { beforeAgent true; not { branch pattern: 'master(-\\d+)?', comparator: 'REGEXP' }; expression { releaseCandidate } }
 			agent { docker { image env.DOCKER_IMAGE; args env.DOCKER_ARGS; registryUrl env.DOCKER_URL; registryCredentialsId env.DOCKER_CREDS } }
 			steps {
-				milestone 2
+				milestone 3
 				sh "git branch -d jenkins_${BUILD_NUMBER} || true"
 				sh "git checkout -b jenkins_${BUILD_NUMBER}"
 				sshagent( [ 'KirbyGitKey' ] ) {
