@@ -4,12 +4,12 @@
 
 	<scm>
 		<developerConnection>scm:git:ssh://git.herb.herbmarshall.com/repository/util/PomParent</developerConnection>
-		<tag>HEAD</tag>
+		<tag>PomParent-1.11</tag>
 	</scm>
 
 	<groupId>com.herbmarshall</groupId>
 	<artifactId>PomParent</artifactId>
-	<version>1.11-SNAPSHOT</version>
+	<version>1.11</version>
 	<packaging>pom</packaging>
 
 	<properties>
