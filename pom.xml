@@ -16,6 +16,8 @@
 		<java.version>                         17   </java.version>
 
 		<maven-compiler-plugin.verion>      3.8.1   </maven-compiler-plugin.verion>
+		<maven-source-plugin.verion>        3.3.0   </maven-source-plugin.verion>
+		<maven-javadoc-plugin.verion>       3.6.3   </maven-javadoc-plugin.verion>
 		<maven-surefire-plugin.version>  3.0.0-M8   </maven-surefire-plugin.version>
 		<checkstyle-plugin.version>         3.1.2   </checkstyle-plugin.version>
 		<checkstyle.version>               10.6.0   </checkstyle.version>
@@ -52,6 +54,26 @@
 					<source>${java.version}</source>
 					<target>${java.version}</target>
 					<debug>true</debug>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<version>${maven-source-plugin.verion}</version>
+				<executions>
+					<execution>
+						<id>attach-sources</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>${maven-javadoc-plugin.verion}</version>
+				<configuration>
 				</configuration>
 			</plugin>
 			<plugin>
