@@ -74,6 +74,7 @@
 				<artifactId>maven-javadoc-plugin</artifactId>
 				<version>${maven-javadoc-plugin.verion}</version>
 				<configuration>
+					<doclint>all,-missing</doclint>
 				</configuration>
 			</plugin>
 			<plugin>
