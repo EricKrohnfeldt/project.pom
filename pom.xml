@@ -194,18 +194,26 @@
 
 	</build>
 
-	<distributionManagement>
-		<repository>
-			<id>nexus</id>
-			<name>Nexus Releases</name>
-			<url>https://nexus.herb.herbmarshall.com/repository/maven-releases/</url>
+    <distributionManagement>
+        <repository>
+            <id>nexus</id>
+            <name>Nexus Releases</name>
+            <url>https://nexus.herb.herbmarshall.com/repository/maven-releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>nexus</id>
+            <name>Nexus Snapshots</name>
+            <url>https://nexus.herb.herbmarshall.com/repository/maven-snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+    <repositories>
+        <repository>
+			<id>Nexus</id>
+			<name>HerbMarshall Repository</name>
+			<url>https://nexus.herb.herbmarshall.com/repository/maven-public/</url>
 		</repository>
-		<snapshotRepository>
-			<id>nexus</id>
-			<name>Nexus Snapshots</name>
-			<url>https://nexus.herb.herbmarshall.com/repository/maven-snapshots/</url>
-		</snapshotRepository>
-	</distributionManagement>
+	</repositories>
 
 	<reporting>
 		<plugins>

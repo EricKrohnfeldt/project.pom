@@ -2,6 +2,13 @@ def releaseCandidate = false;
 pipeline {
 	agent none
 	stages {
+		stage('Clean Workspace') {
+			when { beforeAgent true; not { branch pattern: 'master(-\\d+)?', comparator: 'REGEXP' } }
+			agent { docker { image env.DOCKER_IMAGE; args env.DOCKER_ARGS; registryUrl env.DOCKER_URL; registryCredentialsId env.DOCKER_CREDS } }
+			steps {
+				cleanWs()
+		  	}
+		}
 		stage( 'Deploy Snapshot' ) {
 			when { beforeAgent true; not { branch pattern: 'master(-\\d+)?', comparator: 'REGEXP' } }
 			agent { docker { image env.DOCKER_IMAGE; args env.DOCKER_ARGS; registryUrl env.DOCKER_URL; registryCredentialsId env.DOCKER_CREDS } }
@@ -24,6 +31,8 @@ pipeline {
 						returnStatus: true
 					)
 				}
+				sh "echo Release Candidate: $releaseCandidate"
+				sh "[ true != $releaseCandidate ] && git log --all --decorate --oneline --graph | head -n50 || true"
 			}
 		}
 		stage( 'Confirm merge' ) {
