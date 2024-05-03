@@ -3,12 +3,12 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<scm>
-		<developerConnection>scm:git:ssh://git.herb.herbmarshall.com/repository/util/PomParent</developerConnection>
+		<developerConnection>scm:git:ssh://git.herb.herbmarshall.com/repository/util/project.pom</developerConnection>
 		<tag>HEAD</tag>
 	</scm>
 
 	<groupId>com.herbmarshall</groupId>
-	<artifactId>PomParent</artifactId>
+	<artifactId>project.pom</artifactId>
 	<version>1.16-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
@@ -17,7 +17,8 @@
 
 		<checkstyle-devops.minor>   0   </checkstyle-devops.minor>
 
-		<checkstyle-devops.version>   ${util.major}.${checkstyle-devops.minor}   </checkstyle-devops.version>
+<!--		<checkstyle-devops.version>   ${util.major}.${checkstyle-devops.minor}   </checkstyle-devops.version>-->
+<!--		<checkstyle-devops.version>   0.1-SNAPSHOT   </checkstyle-devops.version>-->
 
 		<java.version>                         17   </java.version>
 		<coverage-level>                     1.00   </coverage-level>
@@ -46,7 +47,7 @@
 	</dependencies>
 
 	<modules>
-		<module>libraryParent</module>
+		<module>library</module>
 	</modules>
 
 	<build>
@@ -181,6 +182,11 @@
 							<artifactId>checkstyle</artifactId>
 							<version>${checkstyle.version}</version>
 						</dependency>
+<!--						<dependency>-->
+<!--							<groupId>com.herbmarshall</groupId>-->
+<!--							<artifactId>checkstyle.devops</artifactId>-->
+<!--							<version>${checkstyle-devops.version}</version>-->
+<!--						</dependency>-->
 					</dependencies>
 				</plugin>
 			</plugins>

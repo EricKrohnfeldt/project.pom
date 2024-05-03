@@ -4,11 +4,11 @@
 
 	<parent>
 		<groupId>com.herbmarshall</groupId>
-		<artifactId>PomParent</artifactId>
+		<artifactId>project.pom</artifactId>
 		<version>1.16-SNAPSHOT</version>
 	</parent>
 
-	<artifactId>LibraryParent</artifactId>
+	<artifactId>library.pom</artifactId>
 	<packaging>pom</packaging>
 
 	<properties>
