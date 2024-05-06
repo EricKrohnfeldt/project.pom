@@ -13,7 +13,6 @@ set -e
 cd "$( dirname "$( realpath "$( readlink -f "$0" )" )" )"
 
 OPERATION='build'
-DEST=
 BUILD_DIR=$( pwd )
 SKIP_CHECKS=
 SKIP_TESTS=
@@ -41,9 +40,6 @@ do
 		-x)
 			SKIP_CHECKS='-Dcheckstyle.skip=true'
 			SKIP_TESTS='-Dmaven.test.skip.exec'
-		;;
-		*)
-			DEST="$1"
 		;;
 	esac
 	shift
