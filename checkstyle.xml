@@ -162,7 +162,7 @@
 		<module name="EmptyForIteratorPad" />
 		<module name="GenericWhitespace" />
 		<module name="MethodParamPad">
-			<property name="tokens" value="CTOR_DEF, LITERAL_NEW, METHOD_CALL, METHOD_DEF, SUPER_CTOR_CALL, ENUM_CONSTANT_DEF" />
+			<property name="tokens" value="CTOR_DEF, LITERAL_NEW, METHOD_DEF, SUPER_CTOR_CALL, ENUM_CONSTANT_DEF" />
 		</module>
 		<module name="NoWhitespaceAfter">
 			<property name="tokens" value="AT, INC, DEC, UNARY_MINUS, UNARY_PLUS, BNOT, DOT, ARRAY_DECLARATOR, INDEX_OP" />
