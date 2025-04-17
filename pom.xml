@@ -11,7 +11,7 @@
 
 	<groupId>   com.herbmarshall   </groupId>
 	<artifactId>     project.pom   </artifactId>
-	<version>      1.18-SNAPSHOT   </version>
+	<version>      1.18   </version>
 	<packaging>              pom   </packaging>
 
 	<properties>
@@ -242,7 +242,7 @@
 
     <scm>
         <developerConnection>scm:git:ssh://git.herb.herbmarshall.com/repository/util/project.pom</developerConnection>
-        <tag>HEAD</tag>
+        <tag>project.pom-1.18</tag>
     </scm>
 
 </project>
