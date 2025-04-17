@@ -9,11 +9,6 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<scm>
-		<developerConnection>scm:git:ssh://git.herb.herbmarshall.com/repository/util/project.pom</developerConnection>
-		<tag>HEAD</tag>
-	</scm>
-
 	<groupId>   com.herbmarshall   </groupId>
 	<artifactId>     project.pom   </artifactId>
 	<version>      1.18-SNAPSHOT   </version>
@@ -203,9 +198,9 @@
 
 	<repositories>
 		<repository>
-			<id>                                                           Nexus   </id>
-			<name>                                       HerbMarshall Repository   </name>
-			<url>   https://nexus.herb.herbmarshall.com/repository/maven-public/   </url>
+			<id>                                                            Nexus   </id>
+			<name>                                        HerbMarshall Repository   </name>
+			<url>    https://nexus.herb.herbmarshall.com/repository/maven-public/   </url>
 		</repository>
 	</repositories>
 
@@ -225,9 +220,9 @@
 	<reporting>
 		<plugins>
 			<plugin>
-				<groupId>       org.apache.maven.plugins   </groupId>
-				<artifactId>     maven-checkstyle-plugin   </artifactId>
-				<version>   ${checkstyle-plugin.version}   </version>
+				<groupId>          org.apache.maven.plugins   </groupId>
+				<artifactId>        maven-checkstyle-plugin   </artifactId>
+				<version>      ${checkstyle-plugin.version}   </version>
 				<configuration>
 					<configLocation>   checkstyle.xml   </configLocation>
 				</configuration>
@@ -235,5 +230,10 @@
 		</plugins>
 	</reporting>
 
+
+    <scm>
+        <developerConnection>scm:git:ssh://git.herb.herbmarshall.com/repository/util/project.pom</developerConnection>
+        <tag>HEAD</tag>
+    </scm>
 
 </project>
