@@ -14,10 +14,10 @@
 		<tag>HEAD</tag>
 	</scm>
 
-	<groupId>com.herbmarshall</groupId>
-	<artifactId>project.pom</artifactId>
-	<version>1.18-SNAPSHOT</version>
-	<packaging>pom</packaging>
+	<groupId>   com.herbmarshall   </groupId>
+	<artifactId>     project.pom   </artifactId>
+	<version>      1.18-SNAPSHOT   </version>
+	<packaging>              pom   </packaging>
 
 	<properties>
 		<util.major>   1   </util.major>
@@ -45,119 +45,119 @@
 	<dependencies>
 
 		<dependency>
-			<groupId>org.junit.jupiter</groupId>
-			<artifactId>junit-jupiter</artifactId>
-			<version>${junit.version}</version>
-			<scope>test</scope>
+			<groupId>   org.junit.jupiter   </groupId>
+			<artifactId>    junit-jupiter   </artifactId>
+			<version>    ${junit.version}   </version>
+			<scope>                  test   </scope>
 		</dependency>
 
 	</dependencies>
 
 	<modules>
-		<module>library</module>
+		<module>   library   </module>
 	</modules>
 
 	<build>
 
 		<plugins>
 			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>${maven-compiler-plugin.verion}</version>
+				<groupId>          org.apache.maven.plugins   </groupId>
+				<artifactId>          maven-compiler-plugin   </artifactId>
+				<version>   ${maven-compiler-plugin.verion}   </version>
 				<configuration>
-					<source>${java.version}</source>
-					<target>${java.version}</target>
-					<debug>true</debug>
+					<source>   ${java.version}   </source>
+					<target>   ${java.version}   </target>
+					<debug>               true   </debug>
 				</configuration>
 			</plugin>
 			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-source-plugin</artifactId>
-				<version>${maven-source-plugin.verion}</version>
+				<groupId>        org.apache.maven.plugins   </groupId>
+				<artifactId>          maven-source-plugin   </artifactId>
+				<version>   ${maven-source-plugin.verion}   </version>
 				<executions>
 					<execution>
-						<id>attach-sources</id>
+						<id>   attach-sources   </id>
 						<goals>
-							<goal>jar</goal>
+							<goal>   jar   </goal>
 						</goals>
 					</execution>
 				</executions>
 			</plugin>
 			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-javadoc-plugin</artifactId>
-				<version>${maven-javadoc-plugin.verion}</version>
+				<groupId>         org.apache.maven.plugins   </groupId>
+				<artifactId>          maven-javadoc-plugin   </artifactId>
+				<version>   ${maven-javadoc-plugin.verion}   </version>
 				<configuration>
-					<doclint>all,-missing</doclint>
+					<doclint>   all,-missing   </doclint>
 				</configuration>
 				<executions>
 					<execution>
-						<id>attach-javadocs</id>
+						<id>   attach-javadocs   </id>
 						<goals>
-							<goal>jar</goal>
+							<goal>   jar   </goal>
 						</goals>
 					</execution>
 				</executions>
 			</plugin>
 			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-checkstyle-plugin</artifactId>
-				<version>${checkstyle-plugin.version}</version>
+				<groupId>       org.apache.maven.plugins   </groupId>
+				<artifactId>     maven-checkstyle-plugin   </artifactId>
+				<version>   ${checkstyle-plugin.version}   </version>
 				<executions>
 					<execution>
-						<id>validate</id>
-						<phase>validate</phase>
+						<id>      validate   </id>
+						<phase>   validate   </phase>
 						<goals>
-							<goal>check</goal>
+							<goal>   check   </goal>
 						</goals>
 					</execution>
 				</executions>
 				<configuration>
-					<configLocation>checkstyle.xml</configLocation>
-					<includeTestSourceDirectory>true</includeTestSourceDirectory>
+					<configLocation>     checkstyle.xml   </configLocation>
+					<includeTestSourceDirectory>   true   </includeTestSourceDirectory>
 				</configuration>
 			</plugin>
 			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-surefire-plugin</artifactId>
-				<version>${maven-surefire-plugin.version}</version>
+				<groupId>           org.apache.maven.plugins   </groupId>
+				<artifactId>           maven-surefire-plugin   </artifactId>
+				<version>   ${maven-surefire-plugin.version}   </version>
 			</plugin>
 			<plugin>
-				<groupId>org.jacoco</groupId>
-				<artifactId>jacoco-maven-plugin</artifactId>
-				<version>${jacoco.version}</version>
+				<groupId>               org.jacoco   </groupId>
+				<artifactId>   jacoco-maven-plugin   </artifactId>
+				<version>        ${jacoco.version}   </version>
 				<executions>
 					<execution>
 						<goals>
-							<goal>prepare-agent</goal>
+							<goal>   prepare-agent   </goal>
 						</goals>
 					</execution>
 					<execution>
-						<id>report</id>
-						<phase>prepare-package</phase>
+						<id>               report   </id>
+						<phase>   prepare-package   </phase>
 						<goals>
-							<goal>report</goal>
+							<goal>   report   </goal>
 						</goals>
 					</execution>
 					<execution>
-						<id>jacoco-check</id>
+						<id>   jacoco-check   </id>
 						<goals>
-							<goal>check</goal>
+							<goal>   check   </goal>
 						</goals>
 						<configuration>
 							<rules>
 								<rule>
-									<element>CLASS</element>
+									<element>   CLASS   </element>
 									<limits>
 										<limit>
-											<counter>LINE</counter>
-											<value>COVEREDRATIO</value>
-											<minimum>${coverage-level}</minimum>
+											<counter>                LINE   </counter>
+											<value>          COVEREDRATIO   </value>
+											<minimum>   ${coverage-level}   </minimum>
 										</limit>
 										<limit>
-											<counter>BRANCH</counter>
-											<value>COVEREDRATIO</value>
-											<minimum>${coverage-level}</minimum>
+											<counter>              BRANCH   </counter>
+											<value>          COVEREDRATIO   </value>
+											<minimum>   ${coverage-level}   </minimum>
 										</limit>
 									</limits>
 								</rule>
@@ -167,12 +167,12 @@
 				</executions>
 			</plugin>
 			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-release-plugin</artifactId>
-				<version>${maven-release-plugin.version}</version>
+				<groupId>          org.apache.maven.plugins   </groupId>
+				<artifactId>           maven-release-plugin   </artifactId>
+				<version>   ${maven-release-plugin.version}   </version>
 				<configuration>
-					<scmCommentPrefix>[Release] </scmCommentPrefix>
-					<autoVersionSubmodules>true</autoVersionSubmodules>
+					<scmCommentPrefix>   [Release]    </scmCommentPrefix>
+					<autoVersionSubmodules>   true   </autoVersionSubmodules>
 				</configuration>
 			</plugin>
 		</plugins>
@@ -180,14 +180,14 @@
 		<pluginManagement>
 			<plugins>
 				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-checkstyle-plugin</artifactId>
-					<version>${checkstyle-plugin.version}</version>
+					<groupId>       org.apache.maven.plugins   </groupId>
+					<artifactId>     maven-checkstyle-plugin   </artifactId>
+					<version>   ${checkstyle-plugin.version}   </version>
 					<dependencies>
 						<dependency>
-							<groupId>com.puppycrawl.tools</groupId>
-							<artifactId>checkstyle</artifactId>
-							<version>${checkstyle.version}</version>
+							<groupId>    com.puppycrawl.tools   </groupId>
+							<artifactId>           checkstyle   </artifactId>
+							<version>   ${checkstyle.version}   </version>
 						</dependency>
 <!--						<dependency>-->
 <!--							<groupId>com.herbmarshall</groupId>-->
@@ -203,33 +203,33 @@
 
 	<repositories>
 		<repository>
-			<id>Nexus</id>
-			<name>HerbMarshall Repository</name>
-			<url>https://nexus.herb.herbmarshall.com/repository/maven-public/</url>
+			<id>                                                           Nexus   </id>
+			<name>                                       HerbMarshall Repository   </name>
+			<url>   https://nexus.herb.herbmarshall.com/repository/maven-public/   </url>
 		</repository>
 	</repositories>
 
 	<distributionManagement>
         <repository>
-            <id>nexus</id>
-            <name>Nexus Releases</name>
-            <url>https://nexus.herb.herbmarshall.com/repository/maven-releases/</url>
+            <id>                                                             nexus   </id>
+            <name>                                                  Nexus Releases   </name>
+            <url>   https://nexus.herb.herbmarshall.com/repository/maven-releases/   </url>
         </repository>
         <snapshotRepository>
-            <id>nexus</id>
-            <name>Nexus Snapshots</name>
-            <url>https://nexus.herb.herbmarshall.com/repository/maven-snapshots/</url>
+            <id>                                                              nexus   </id>
+            <name>                                                  Nexus Snapshots   </name>
+            <url>   https://nexus.herb.herbmarshall.com/repository/maven-snapshots/   </url>
         </snapshotRepository>
     </distributionManagement>
 
 	<reporting>
 		<plugins>
 			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-checkstyle-plugin</artifactId>
-				<version>${checkstyle-plugin.version}</version>
+				<groupId>       org.apache.maven.plugins   </groupId>
+				<artifactId>     maven-checkstyle-plugin   </artifactId>
+				<version>   ${checkstyle-plugin.version}   </version>
 				<configuration>
-					<configLocation>checkstyle.xml</configLocation>
+					<configLocation>   checkstyle.xml   </configLocation>
 				</configuration>
 			</plugin>
 		</plugins>
