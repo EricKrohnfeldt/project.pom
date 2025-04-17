@@ -35,6 +35,8 @@
 		<maven-javadoc-plugin.verion>       3.6.3   </maven-javadoc-plugin.verion>
 		<maven-surefire-plugin.version>  3.0.0-M8   </maven-surefire-plugin.version>
 		<maven-release-plugin.version>   3.0.0-M7   </maven-release-plugin.version>
+
+		<jetbrains.annotations.version>    23.0.0   </jetbrains.annotations.version>
 	</properties>
 
 	<dependencies>
@@ -44,6 +46,13 @@
 			<artifactId>    junit-jupiter   </artifactId>
 			<version>    ${junit.version}   </version>
 			<scope>                  test   </scope>
+		</dependency>
+
+		<dependency>
+			<groupId>                      org.jetbrains   </groupId>
+			<artifactId>                     annotations   </artifactId>
+			<version>   ${jetbrains.annotations.version}   </version>
+			<scope>                             provided   </scope>
 		</dependency>
 
 	</dependencies>
@@ -220,9 +229,9 @@
 	<reporting>
 		<plugins>
 			<plugin>
-				<groupId>          org.apache.maven.plugins   </groupId>
-				<artifactId>        maven-checkstyle-plugin   </artifactId>
-				<version>      ${checkstyle-plugin.version}   </version>
+				<groupId>       org.apache.maven.plugins   </groupId>
+				<artifactId>     maven-checkstyle-plugin   </artifactId>
+				<version>   ${checkstyle-plugin.version}   </version>
 				<configuration>
 					<configLocation>   checkstyle.xml   </configLocation>
 				</configuration>
