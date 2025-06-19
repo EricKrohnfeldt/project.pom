@@ -72,6 +72,9 @@
 					<source>   ${java.version}   </source>
 					<target>   ${java.version}   </target>
 					<debug>               true   </debug>
+					<compilerArgs>
+						<arg>   -parameters   </arg>
+					</compilerArgs>
 				</configuration>
 			</plugin>
 			<plugin>
